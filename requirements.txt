@@ -1,0 +1,12 @@
+onnx
+torch==2.8.0
+torchaudio==2.8.0
+onnxruntime~=1.23.0
+onnxscript
+sentencepiece
+pyyaml
+kaldi_native_fbank
+soundfile
+librosa
+onnxruntime-openvino~=1.23.0
+openvino~=2025.3.0

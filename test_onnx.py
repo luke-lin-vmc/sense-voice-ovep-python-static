@@ -11,10 +11,20 @@ import onnxruntime as ort
 import soundfile as sf
 import torch
 
+# Add openvino libs to path as onnxruntime_providers_openvino.dll depends on openvino.dll. See https://github.com/intel/onnxruntime/releases/
+import onnxruntime.tools.add_openvino_win_libs as utils
+utils.add_openvino_libs_to_path()
+
 
 def get_args():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+
+    parser.add_argument(
+        "--device",
+        type=str,
+        help="Execution device. Use 'CPU', 'GPU', 'NPU' for OpenVINO. If not specified, the default CPUExecutionProvider will be used."
     )
 
     parser.add_argument(
@@ -56,17 +66,32 @@ def get_args():
 
 
 class OnnxModel:
-    def __init__(self, filename):
+    def __init__(self, device: str, filename):
         session_opts = ort.SessionOptions()
         session_opts.inter_op_num_threads = 1
         session_opts.intra_op_num_threads = 1
 
         self.session_opts = session_opts
+        self.device = device
+
+        if device in ["CPU", "GPU", "NPU"]:
+            print(f"Device: OpenVINO EP with device = {device}")
+            providers = ['OpenVINOExecutionProvider']
+            provider_options = [{"device_type": device}]
+            
+            # For NPU device, OpenVINO typically benefits from caching
+            if device == "NPU":
+                 provider_options[0]["cache_dir"] = "cache"
+        else:
+            print("Device: Using Default CPU Executor.")
+            providers = ["CPUExecutionProvider"]
+            provider_options = None
 
         self.model = ort.InferenceSession(
             filename,
             sess_options=self.session_opts,
-            providers=["CPUExecutionProvider"],
+            providers=providers,
+            provider_options=provider_options
         )
 
         meta = self.model.get_modelmeta().custom_metadata_map
@@ -180,6 +205,11 @@ def compute_feat(
 def main():
     args = get_args()
     print(vars(args))
+
+    device = None
+    if args.device is not None:
+        device = args.device.upper()
+
     samples, sample_rate = load_audio(args.wave)
     if sample_rate != 16000:
         import librosa
@@ -187,7 +217,7 @@ def main():
         samples = librosa.resample(samples, orig_sr=sample_rate, target_sr=16000)
         sample_rate = 16000
 
-    model = OnnxModel(filename=args.model)
+    model = OnnxModel(device=device, filename=args.model)
 
     features = compute_feat(
         samples=samples,
