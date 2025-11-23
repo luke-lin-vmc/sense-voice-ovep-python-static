@@ -3,7 +3,7 @@ This Python pipeline is to show how to run SenseVioce ASR on Intel CPU/GPU/NPU t
 
 This implementation is forked from [RKNN implementation](https://github.com/k2-fsa/sherpa-onnx/tree/16d62b6a08f617c2bd6d21d411911c6462607f08/scripts/sense-voice/rknn) of [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) project 
 
-Audio samples ("```en.mp3```, ```ja.mp3```, ```ko.mp3```, ```yue.mp3``` and ```zh.mp3```") are downloaded from [Hugging Face FunAudioLLM SenseVoice Small](https://huggingface.co/FunAudioLLM/SenseVoiceSmall/tree/main/example)
+Audio samples ("```en.mp3```", "```ja.mp3```", "```ko.mp3```", "```yue.mp3```" and "```zh.mp3```") are downloaded from [Hugging Face FunAudioLLM SenseVoice Small](https://huggingface.co/FunAudioLLM/SenseVoiceSmall/tree/main/example)
 
 
 ## Key features
