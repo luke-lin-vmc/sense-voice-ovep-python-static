@@ -8,7 +8,7 @@ Audio samples ("```en.mp3```, ```ja.mp3```, ```ko.mp3```, ```yue.mp3``` and ```z
 
 ## Key features
 * Off-line (non-streaming) mode
-* Support Chinese (zh) only
+* Multilingual speech recognition for Chinese, Cantonese, English, Japanese, and Korean
 * Models are converted to static (mainly for NPU)
 
 # Quick Steps
@@ -35,36 +35,30 @@ model-5-seconds.onnx
 ```
 The project directory should look like
 ```
-(openvino_venv) C:\Github\paraformer-zh-ovep-python-static>dir
- Volume in drive C is InstallTo
- Volume Serial Number is 76DF-BB22
+(ovep_venv) C:\GitHub\sense-voice-ovep-python-static>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is C2C8-D7B9
 
- Directory of C:\Github\paraformer-zh-ovep-python-static
+ Directory of C:\GitHub\sense-voice-ovep-python-static
 
-11/21/2025  11:51 AM    <DIR>          .
-11/20/2025  04:20 PM    <DIR>          ..
-11/21/2025  11:32 AM           179,712 0.wav
-11/21/2025  11:32 AM           165,042 1.wav
-11/21/2025  11:32 AM           144,922 2.wav
-11/21/2025  11:44 AM            11,203 am.mvn
-11/21/2025  11:44 AM             2,509 config.yaml
-11/21/2025  11:44 AM               472 configuration.json
-11/21/2025  11:50 AM       228,460,151 decoder-5-seconds.onnx
-11/21/2025  11:50 AM       632,885,122 encoder-5-seconds.onnx
-11/21/2025  11:32 AM             1,169 export_decoder_onnx.py
-11/21/2025  11:32 AM             5,189 export_encoder_onnx.py
-11/21/2025  11:32 AM             1,510 export_predictor_onnx.py
-11/21/2025  11:45 AM       880,502,012 model.pt
-11/21/2025  11:51 AM         3,152,772 predictor-5-seconds.onnx
-11/21/2025  11:32 AM             6,446 README.md
-11/21/2025  11:32 AM               120 requirements.txt
-11/21/2025  11:45 AM         8,287,834 seg_dict
-11/21/2025  11:32 AM            10,969 test_onnx.py
-11/21/2025  11:45 AM            93,676 tokens.json
-11/21/2025  11:32 AM            44,688 torch_model.py
-11/21/2025  11:50 AM    <DIR>          __pycache__
-              19 File(s)  1,753,955,518 bytes
-               3 Dir(s)  225,971,204,096 bytes free
+11/23/2025  07:50 PM    <DIR>          .
+11/23/2025  05:49 PM    <DIR>          ..
+11/21/2025  02:07 PM            11,203 am.mvn
+11/21/2025  02:07 PM           377,341 chn_jpn_yue_eng_ko_spectok.bpe.model
+11/21/2025  02:07 PM             1,855 config.yaml
+11/21/2025  02:07 PM               396 configuration.json
+11/23/2025  02:45 PM    <DIR>          example
+11/23/2025  04:02 PM             4,802 export-onnx.py
+11/23/2025  03:18 PM       928,985,316 model-5-seconds.onnx
+11/23/2025  03:10 PM       936,291,369 model.pt
+11/23/2025  07:41 PM             6,804 README.md
+11/23/2025  03:20 PM               185 requirements.txt
+11/23/2025  07:27 PM             7,171 test_onnx.py
+11/23/2025  04:10 PM           340,949 tokens.txt
+11/21/2025  02:19 PM            19,498 torch_model.py
+11/23/2025  07:50 PM    <DIR>          __pycache__
+              12 File(s)  1,866,046,889 bytes
+               4 Dir(s)  42,499,436,544 bytes free
 ```
 ## Run
 Usage
@@ -88,7 +82,7 @@ Run on CPU
 ```
 python test_onnx.py --device CPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3
 ```
-Run on CPU, output result includes punctuation and inverse text normalization.
+Run on CPU. Output text to include punctuation and inverse text normalization.
 ```
 python test_onnx.py --device CPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3 --use-itn 1
 ```
@@ -122,6 +116,14 @@ Device: OpenVINO EP with device = NPU
 features.shape (93, 560)
 features.shape (83, 560)
 <|zh|><|NEUTRAL|><|Speech|><|woitn|>开 放 时 间 早 上 九 点 至 下 午 五 点
+```
+```
+(ovep_venv) C:\GitHub\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3 --use-itn 1
+{'device': 'NPU', 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\zh.mp3', 'language': 'auto', 'use_itn': 1}
+Device: OpenVINO EP with device = NPU
+features.shape (93, 560)
+features.shape (83, 560)
+<|zh|><|NEUTRAL|><|Speech|><|withitn|>开 放 时 间 早 上 9 点 至 下 午 5 点 。
 ```
 [Full log](https://github.com/luke-lin-vmc/sense-voice-ovep-python-static/blob/main/log_full.txt) (from scratch) is provided for reference
 
