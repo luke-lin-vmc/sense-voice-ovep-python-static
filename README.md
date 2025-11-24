@@ -1,5 +1,5 @@
 # About sense-voice-ovep-python-static
-This Python pipeline is to show how to run SenseVioce ASR on Intel CPU/GPU/NPU thru [ONNX Runtime](https://github.com/microsoft/onnxruntime) + [OpenVINO Execution Provider](https://onnxruntime.ai/docs/execution-providers/OpenVINO-ExecutionProvider.html)
+This Python pipeline is to show how to run [SenseVioce](https://huggingface.co/FunAudioLLM/SenseVoiceSmall) ASR on Intel CPU/GPU/NPU thru [ONNX Runtime](https://github.com/microsoft/onnxruntime) + [OpenVINO Execution Provider](https://onnxruntime.ai/docs/execution-providers/OpenVINO-ExecutionProvider.html)
 
 This implementation is forked from [RKNN implementation](https://github.com/k2-fsa/sherpa-onnx/tree/16d62b6a08f617c2bd6d21d411911c6462607f08/scripts/sense-voice/rknn) of [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) project 
 
@@ -13,8 +13,7 @@ Audio samples ("```en.mp3```, ```ja.mp3```, ```ko.mp3```, ```yue.mp3``` and ```z
 
 # Quick Steps
 ## Download and export models
-Visit https://huggingface.co/FunAudioLLM/SenseVoiceSmall/tree/main, download the following 
-files
+Visit https://huggingface.co/FunAudioLLM/SenseVoiceSmall/tree/main, download the following files
 ```
 am.mvn
 chn_jpn_yue_eng_ko_spectok.bpe.model
@@ -35,30 +34,30 @@ model-5-seconds.onnx
 ```
 The project directory should look like
 ```
-(ovep_venv) C:\GitHub\sense-voice-ovep-python-static>dir
- Volume in drive C is OSDisk
- Volume Serial Number is C2C8-D7B9
+(openvino_venv) C:\Github\sense-voice-ovep-python-static>dir
+ Volume in drive C is InstallTo
+ Volume Serial Number is 76DF-BB22
 
- Directory of C:\GitHub\sense-voice-ovep-python-static
+ Directory of C:\Github\sense-voice-ovep-python-static
 
-11/23/2025  07:50 PM    <DIR>          .
-11/23/2025  05:49 PM    <DIR>          ..
-11/21/2025  02:07 PM            11,203 am.mvn
-11/21/2025  02:07 PM           377,341 chn_jpn_yue_eng_ko_spectok.bpe.model
-11/21/2025  02:07 PM             1,855 config.yaml
-11/21/2025  02:07 PM               396 configuration.json
-11/23/2025  02:45 PM    <DIR>          example
-11/23/2025  04:02 PM             4,802 export-onnx.py
-11/23/2025  03:18 PM       928,985,316 model-5-seconds.onnx
-11/23/2025  03:10 PM       936,291,369 model.pt
-11/23/2025  07:41 PM             6,804 README.md
-11/23/2025  03:20 PM               185 requirements.txt
-11/23/2025  07:27 PM             7,171 test_onnx.py
-11/23/2025  04:10 PM           340,949 tokens.txt
-11/21/2025  02:19 PM            19,498 torch_model.py
-11/23/2025  07:50 PM    <DIR>          __pycache__
-              12 File(s)  1,866,046,889 bytes
-               4 Dir(s)  42,499,436,544 bytes free
+11/24/2025  03:08 PM    <DIR>          .
+11/24/2025  02:58 PM    <DIR>          ..
+11/24/2025  03:02 PM            11,203 am.mvn
+11/24/2025  03:02 PM           377,341 chn_jpn_yue_eng_ko_spectok.bpe.model
+11/24/2025  03:02 PM             1,855 config.yaml
+11/24/2025  03:02 PM               396 configuration.json
+11/23/2025  08:02 PM    <DIR>          example
+11/23/2025  08:02 PM             4,802 export-onnx.py
+11/24/2025  03:08 PM       928,985,316 model-5-seconds.onnx
+11/24/2025  03:03 PM       936,291,369 model.pt
+11/23/2025  08:02 PM             6,887 README.md
+11/23/2025  08:02 PM               173 requirements.txt
+11/23/2025  08:02 PM             7,171 test_onnx.py
+11/24/2025  03:07 PM           340,949 tokens.txt
+11/23/2025  08:02 PM            19,498 torch_model.py
+11/24/2025  03:07 PM    <DIR>          __pycache__
+              12 File(s)  1,866,046,960 bytes
+               4 Dir(s)  225,240,248,320 bytes free
 ```
 ## Run
 Usage
@@ -82,7 +81,7 @@ Run on CPU
 ```
 python test_onnx.py --device CPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3
 ```
-Run on CPU. Output text to include punctuation and inverse text normalization.
+Run on CPU. Output text with punctuation and inverse text normalization.
 ```
 python test_onnx.py --device CPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3 --use-itn 1
 ```
@@ -109,6 +108,7 @@ The pipeline has been verified working on a ```Intel(R) Core(TM) Ultra 7 268V (L
 | Chinese (zh.mp3)   | OK  | OK  | OK  |
 
 ### Sample log (device is NPU)
+Without punctuation and inverse text normalization
 ```
 (ovep_venv) C:\GitHub\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3
 {'device': 'NPU', 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\zh.mp3', 'language': 'auto', 'use_itn': 0}
@@ -117,6 +117,7 @@ features.shape (93, 560)
 features.shape (83, 560)
 <|zh|><|NEUTRAL|><|Speech|><|woitn|>开 放 时 间 早 上 九 点 至 下 午 五 点
 ```
+With punctuation and inverse text normalization
 ```
 (ovep_venv) C:\GitHub\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3 --use-itn 1
 {'device': 'NPU', 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\zh.mp3', 'language': 'auto', 'use_itn': 1}
