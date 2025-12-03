@@ -1,7 +1,6 @@
 onnx
 torch==2.8.0
 torchaudio==2.8.0
-onnxruntime~=1.23.0
 onnxscript
 sentencepiece
 pyyaml

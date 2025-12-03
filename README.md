@@ -129,13 +129,19 @@ features.shape (83, 560)
 [Full log](https://github.com/luke-lin-vmc/sense-voice-ovep-python-static/blob/main/log_full.txt) (from scratch) is provided for reference
 
 ## Known issues
-The following warning appears when running the pipeline thru OVEP for the 1st time
+## Known issues
+If the following warning appears when running the pipeline thru OVEP for the 1st time
 ```
 C:\Users\...\site-packages\onnxruntime\capi\onnxruntime_inference_collection.py:123:
 User Warning: Specified provider 'OpenVINOExecutionProvider' is not in available provider names.
 Available providers: 'AzureExecutionProvider, CPUExecutionProvider'
 ```
-Solution is to simply re-install ```onnxruntime-openvino```
+This would be caused by that both ```onnxruntime``` and ```onnxruntime-openvino``` are installed. Solution is to remove both of them then re-install ```onnxruntime-openvino```
+```
+pip uninstall -y onnxruntime onnxruntime-openvino
+pip install onnxruntime-openvino~=1.23.0
+```
+Or simply to re-install ```onnxruntime-openvino``` if you would like to keep ```onnxruntime```
 ```
 pip uninstall -y onnxruntime-openvino
 pip install onnxruntime-openvino~=1.23.0
