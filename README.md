@@ -94,19 +94,6 @@ Run on NPU
 python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3
 ```
 :warning:[NOTE] The 1st time running on NPU will take long time (about 3 minutes) on model compiling. [OpenVINO Model Caching](https://docs.openvino.ai/2025/openvino-workflow/running-inference/optimize-inference/optimizing-latency/model-caching-overview.html) has been enabled for NPU to ease the issue. This feature will cache compiled models. Although the 1st run still takes long, but later runs can be faster as model compilation has been skipped.
-## Tested devices
-The pipeline has been verified working on a ```Intel(R) Core(TM) Ultra 7 268V (Lunar Lake)``` system, with
-* ```iGPU: Intel(R) Arc(TM) 140V GPU, driver 32.0.101.8247 (10/22/2025)```
-* ```NPU: Intel(R) AI Boost, driver 32.0.100.4404 (11/7/2025)```
-### Result
-| Sample             | CPU | GPU | NPU |
-|--------------------|-----|-----|-----|
-| English (en.mp3)   | OK  | OK  | OK  |
-| Japanese (ja.mp3)  | OK  | OK  | OK  |
-| Korean (ko.mp3)    | OK  | OK  | OK  |
-| Cantonese (yue.mp3)| OK  | OK  | OK  |
-| Chinese (zh.mp3)   | OK  | OK  | OK  |
-
 ### Sample log (device is NPU)
 Without punctuation and inverse text normalization
 ```
@@ -127,8 +114,19 @@ features.shape (83, 560)
 <|zh|><|NEUTRAL|><|Speech|><|withitn|>开 放 时 间 早 上 9 点 至 下 午 5 点 。
 ```
 [Full log](https://github.com/luke-lin-vmc/sense-voice-ovep-python-static/blob/main/log_full.txt) (from scratch) is provided for reference
+## System for validation
+The pipeline has been validated on a ```Intel(R) Core(TM) Ultra 7 268V (Lunar Lake)``` system, with
+* ```iGPU: Intel(R) Arc(TM) 140V GPU, driver 32.0.101.8247 (10/22/2025)```
+* ```NPU: Intel(R) AI Boost, driver 32.0.100.4404 (11/7/2025)```
+### Result
+| Sample             | CPU | GPU | NPU |
+|--------------------|-----|-----|-----|
+| English (en.mp3)   | OK  | OK  | OK  |
+| Japanese (ja.mp3)  | OK  | OK  | OK  |
+| Korean (ko.mp3)    | OK  | OK  | OK  |
+| Cantonese (yue.mp3)| OK  | OK  | OK  |
+| Chinese (zh.mp3)   | OK  | OK  | OK  |
 
-## Known issues
 ## Known issues
 If the following warning appears when running the pipeline thru OVEP for the 1st time
 ```
