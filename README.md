@@ -115,9 +115,9 @@ features.shape (83, 560)
 ```
 [Full log](https://github.com/luke-lin-vmc/sense-voice-ovep-python-static/blob/main/log_full.txt) (from scratch) is provided for reference
 ## System for validation
-The pipeline has been validated on a ```Intel(R) Core(TM) Ultra 7 268V (Lunar Lake)``` system, with
-* ```iGPU: Intel(R) Arc(TM) 140V GPU, driver 32.0.101.8247 (10/22/2025)```
-* ```NPU: Intel(R) AI Boost, driver 32.0.100.4404 (11/7/2025)```
+The pipeline has been validated on a ```Intel(R) Core(TM) Ultra 5 238V (Lunar Lake)``` system, with
+* ```iGPU: Intel(R) Arc(TM) 130V GPU, driver 32.0.101.8247 (10/22/2025)```
+* ```NPU: Intel(R) AI Boost, driver 32.0.100.4514 (12/17/2025)```
 ### Result
 | Sample             | CPU | GPU | NPU |
 |--------------------|-----|-----|-----|
@@ -137,10 +137,10 @@ Available providers: 'AzureExecutionProvider, CPUExecutionProvider'
 This would be caused by that both ```onnxruntime``` and ```onnxruntime-openvino``` are installed. Solution is to remove both of them then re-install ```onnxruntime-openvino```
 ```
 pip uninstall -y onnxruntime onnxruntime-openvino
-pip install onnxruntime-openvino~=1.23.0
+pip install onnxruntime-openvino~=1.24.1
 ```
-Or simply to re-install ```onnxruntime-openvino``` if you would like to keep ```onnxruntime```
+Or simply re-install ```onnxruntime-openvino``` if you would like to keep ```onnxruntime```
 ```
 pip uninstall -y onnxruntime-openvino
-pip install onnxruntime-openvino~=1.23.0
+pip install onnxruntime-openvino~=1.24.1
 ```

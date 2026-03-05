@@ -1,55 +1,43 @@
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>python --version
-Python 3.13.9
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>python --version
+Python 3.13.11
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>python -m pip install --upgrade pip
-Requirement already satisfied: pip in c:\python\openvino_venv\lib\site-packages (25.3)
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>python -m pip install --upgrade pip
+Requirement already satisfied: pip in C:\Python\python313_venv\Lib\site-packages (26.0.1)
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>pip list
+(python313_venv) C:\Github\sense-voice-ovep-python-static>pip list
 Package Version
 ------- -------
-pip     25.3
+pip     26.0.1
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>dir
- Volume in drive C is InstallTo
- Volume Serial Number is 76DF-BB22
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 6E19-CE53
 
- Directory of C:\Github\sense-voice-ovep-python-static
+ Directory of C:\GitHub\sense-voice-ovep-python-static
 
-12/03/2025  03:19 PM    <DIR>          .
-11/25/2025  04:24 PM    <DIR>          ..
-11/24/2025  03:02 PM            11,203 am.mvn
-11/24/2025  03:02 PM           377,341 chn_jpn_yue_eng_ko_spectok.bpe.model
-11/24/2025  03:02 PM             1,855 config.yaml
-11/24/2025  03:02 PM               396 configuration.json
-11/23/2025  08:02 PM    <DIR>          example
-11/23/2025  08:02 PM             4,802 export-onnx.py
-11/24/2025  03:03 PM       936,291,369 model.pt
-11/23/2025  08:02 PM             6,887 README.md
+03/05/2026  03:04 PM    <DIR>          .
+03/05/2026  03:03 PM    <DIR>          ..
+12/24/2025  07:13 PM    <DIR>          example
+11/23/2025  04:02 PM             4,802 export-onnx.py
+12/03/2025  03:29 PM            23,734 log_full.txt
+01/06/2026  02:44 PM             7,499 README.md
 12/03/2025  03:12 PM               164 requirements.txt
-11/23/2025  08:02 PM             7,171 test_onnx.py
-11/23/2025  08:02 PM            19,498 torch_model.py
-              10 File(s)    936,720,686 bytes
-               3 Dir(s)  285,373,775,872 bytes free
+11/23/2025  07:27 PM             7,171 test_onnx.py
+11/21/2025  02:19 PM            19,498 torch_model.py
+03/05/2026  03:04 PM    <DIR>          __pycache__
+               6 File(s)         62,868 bytes
+               4 Dir(s)  592,339,828,736 bytes free
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>pip install -r requirements.txt
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>pip install -r requirements.txt
 Collecting onnx (from -r requirements.txt (line 1))
-  Using cached onnx-1.20.0-cp312-abi3-win_amd64.whl.metadata (8.6 kB)
+  Using cached onnx-1.20.1-cp312-abi3-win_amd64.whl.metadata (8.6 kB)
 Collecting torch==2.8.0 (from -r requirements.txt (line 2))
   Using cached torch-2.8.0-cp313-cp313-win_amd64.whl.metadata (30 kB)
 Collecting torchaudio==2.8.0 (from -r requirements.txt (line 3))
   Using cached torchaudio-2.8.0-cp313-cp313-win_amd64.whl.metadata (7.2 kB)
 Collecting onnxscript (from -r requirements.txt (line 4))
-  Using cached onnxscript-0.5.6-py3-none-any.whl.metadata (13 kB)
+  Downloading onnxscript-0.6.2-py3-none-any.whl.metadata (13 kB)
 Collecting sentencepiece (from -r requirements.txt (line 5))
   Using cached sentencepiece-0.2.1-cp313-cp313-win_amd64.whl.metadata (10 kB)
 Collecting pyyaml (from -r requirements.txt (line 6))
@@ -60,58 +48,56 @@ Collecting soundfile (from -r requirements.txt (line 8))
   Using cached soundfile-0.13.1-py2.py3-none-win_amd64.whl.metadata (16 kB)
 Collecting librosa (from -r requirements.txt (line 9))
   Using cached librosa-0.11.0-py3-none-any.whl.metadata (8.7 kB)
-Collecting onnxruntime-openvino~=1.23.0 (from -r requirements.txt (line 10))
-  Using cached onnxruntime_openvino-1.23.0-cp313-cp313-win_amd64.whl.metadata (5.1 kB)
-Collecting openvino~=2025.3.0 (from -r requirements.txt (line 11))
-  Using cached openvino-2025.3.0-19807-cp313-cp313-win_amd64.whl.metadata (13 kB)
+Collecting onnxruntime-openvino~=1.24.1 (from -r requirements.txt (line 10))
+  Downloading onnxruntime_openvino-1.24.1-cp313-cp313-win_amd64.whl.metadata (5.1 kB)
+Collecting openvino~=2025.4.1 (from -r requirements.txt (line 11))
+  Using cached openvino-2025.4.1-20426-cp313-cp313-win_amd64.whl.metadata (12 kB)
 Collecting filelock (from torch==2.8.0->-r requirements.txt (line 2))
-  Using cached filelock-3.20.0-py3-none-any.whl.metadata (2.1 kB)
+  Downloading filelock-3.25.0-py3-none-any.whl.metadata (2.0 kB)
 Collecting typing-extensions>=4.10.0 (from torch==2.8.0->-r requirements.txt (line 2))
   Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
 Collecting sympy>=1.13.3 (from torch==2.8.0->-r requirements.txt (line 2))
   Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
 Collecting networkx (from torch==2.8.0->-r requirements.txt (line 2))
-  Using cached networkx-3.6-py3-none-any.whl.metadata (6.8 kB)
+  Using cached networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
 Collecting jinja2 (from torch==2.8.0->-r requirements.txt (line 2))
   Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
 Collecting fsspec (from torch==2.8.0->-r requirements.txt (line 2))
-  Using cached fsspec-2025.10.0-py3-none-any.whl.metadata (10 kB)
+  Using cached fsspec-2026.2.0-py3-none-any.whl.metadata (10 kB)
 Collecting setuptools (from torch==2.8.0->-r requirements.txt (line 2))
-  Using cached setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
-Collecting coloredlogs (from onnxruntime-openvino~=1.23.0->-r requirements.txt (line 10))
-  Using cached coloredlogs-15.0.1-py2.py3-none-any.whl.metadata (12 kB)
-Collecting flatbuffers (from onnxruntime-openvino~=1.23.0->-r requirements.txt (line 10))
-  Using cached flatbuffers-25.9.23-py2.py3-none-any.whl.metadata (875 bytes)
-Collecting numpy>=1.21.6 (from onnxruntime-openvino~=1.23.0->-r requirements.txt (line 10))
+  Downloading setuptools-82.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting flatbuffers (from onnxruntime-openvino~=1.24.1->-r requirements.txt (line 10))
+  Using cached flatbuffers-25.12.19-py2.py3-none-any.whl.metadata (1.0 kB)
+Collecting numpy>=1.21.6 (from onnxruntime-openvino~=1.24.1->-r requirements.txt (line 10))
+  Using cached numpy-2.4.2-cp313-cp313-win_amd64.whl.metadata (6.6 kB)
+Collecting packaging (from onnxruntime-openvino~=1.24.1->-r requirements.txt (line 10))
+  Using cached packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting protobuf (from onnxruntime-openvino~=1.24.1->-r requirements.txt (line 10))
+  Downloading protobuf-7.34.0-cp310-abi3-win_amd64.whl.metadata (595 bytes)
+Collecting numpy>=1.21.6 (from onnxruntime-openvino~=1.24.1->-r requirements.txt (line 10))
   Using cached numpy-2.3.5-cp313-cp313-win_amd64.whl.metadata (60 kB)
-Collecting packaging (from onnxruntime-openvino~=1.23.0->-r requirements.txt (line 10))
-  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
-Collecting protobuf (from onnxruntime-openvino~=1.23.0->-r requirements.txt (line 10))
-  Using cached protobuf-6.33.1-cp310-abi3-win_amd64.whl.metadata (593 bytes)
-Collecting numpy>=1.21.6 (from onnxruntime-openvino~=1.23.0->-r requirements.txt (line 10))
-  Using cached numpy-2.2.6-cp313-cp313-win_amd64.whl.metadata (60 kB)
-Collecting openvino-telemetry>=2023.2.1 (from openvino~=2025.3.0->-r requirements.txt (line 11))
+Collecting openvino-telemetry>=2023.2.1 (from openvino~=2025.4.1->-r requirements.txt (line 11))
   Using cached openvino_telemetry-2025.2.0-py3-none-any.whl.metadata (2.3 kB)
 Collecting ml_dtypes>=0.5.0 (from onnx->-r requirements.txt (line 1))
   Using cached ml_dtypes-0.5.4-cp313-cp313-win_amd64.whl.metadata (9.2 kB)
-Collecting onnx_ir<2,>=0.1.12 (from onnxscript->-r requirements.txt (line 4))
-  Using cached onnx_ir-0.1.12-py3-none-any.whl.metadata (3.2 kB)
+Collecting onnx_ir<2,>=0.1.15 (from onnxscript->-r requirements.txt (line 4))
+  Downloading onnx_ir-0.2.0-py3-none-any.whl.metadata (3.3 kB)
 Collecting cffi>=1.0 (from soundfile->-r requirements.txt (line 8))
   Using cached cffi-2.0.0-cp313-cp313-win_amd64.whl.metadata (2.6 kB)
 Collecting audioread>=2.1.9 (from librosa->-r requirements.txt (line 9))
   Using cached audioread-3.1.0-py3-none-any.whl.metadata (9.0 kB)
 Collecting numba>=0.51.0 (from librosa->-r requirements.txt (line 9))
-  Using cached numba-0.62.1-cp313-cp313-win_amd64.whl.metadata (2.9 kB)
+  Downloading numba-0.64.0-cp313-cp313-win_amd64.whl.metadata (3.0 kB)
 Collecting scipy>=1.6.0 (from librosa->-r requirements.txt (line 9))
-  Using cached scipy-1.16.3-cp313-cp313-win_amd64.whl.metadata (60 kB)
+  Downloading scipy-1.17.1-cp313-cp313-win_amd64.whl.metadata (60 kB)
 Collecting scikit-learn>=1.1.0 (from librosa->-r requirements.txt (line 9))
-  Using cached scikit_learn-1.7.2-cp313-cp313-win_amd64.whl.metadata (11 kB)
+  Using cached scikit_learn-1.8.0-cp313-cp313-win_amd64.whl.metadata (11 kB)
 Collecting joblib>=1.0 (from librosa->-r requirements.txt (line 9))
-  Using cached joblib-1.5.2-py3-none-any.whl.metadata (5.6 kB)
+  Using cached joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
 Collecting decorator>=4.3.0 (from librosa->-r requirements.txt (line 9))
   Using cached decorator-5.2.1-py3-none-any.whl.metadata (3.9 kB)
 Collecting pooch>=1.1 (from librosa->-r requirements.txt (line 9))
-  Using cached pooch-1.8.2-py3-none-any.whl.metadata (10 kB)
+  Using cached pooch-1.9.0-py3-none-any.whl.metadata (10 kB)
 Collecting soxr>=0.3.2 (from librosa->-r requirements.txt (line 9))
   Using cached soxr-1.0.0-cp312-abi3-win_amd64.whl.metadata (5.6 kB)
 Collecting lazy_loader>=0.1 (from librosa->-r requirements.txt (line 9))
@@ -123,11 +109,11 @@ Collecting standard-aifc (from librosa->-r requirements.txt (line 9))
 Collecting standard-sunau (from librosa->-r requirements.txt (line 9))
   Using cached standard_sunau-3.13.0-py3-none-any.whl.metadata (914 bytes)
 Collecting pycparser (from cffi>=1.0->soundfile->-r requirements.txt (line 8))
-  Using cached pycparser-2.23-py3-none-any.whl.metadata (993 bytes)
-Collecting llvmlite<0.46,>=0.45.0dev0 (from numba>=0.51.0->librosa->-r requirements.txt (line 9))
-  Using cached llvmlite-0.45.1-cp313-cp313-win_amd64.whl.metadata (5.0 kB)
+  Using cached pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Collecting llvmlite<0.47,>=0.46.0dev0 (from numba>=0.51.0->librosa->-r requirements.txt (line 9))
+  Using cached llvmlite-0.46.0-cp313-cp313-win_amd64.whl.metadata (5.1 kB)
 Collecting platformdirs>=2.5.0 (from pooch>=1.1->librosa->-r requirements.txt (line 9))
-  Using cached platformdirs-4.5.0-py3-none-any.whl.metadata (12 kB)
+  Downloading platformdirs-4.9.2-py3-none-any.whl.metadata (4.7 kB)
 Collecting requests>=2.19.0 (from pooch>=1.1->librosa->-r requirements.txt (line 9))
   Using cached requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
 Collecting charset_normalizer<4,>=2 (from requests>=2.19.0->pooch>=1.1->librosa->-r requirements.txt (line 9))
@@ -135,17 +121,13 @@ Collecting charset_normalizer<4,>=2 (from requests>=2.19.0->pooch>=1.1->librosa-
 Collecting idna<4,>=2.5 (from requests>=2.19.0->pooch>=1.1->librosa->-r requirements.txt (line 9))
   Using cached idna-3.11-py3-none-any.whl.metadata (8.4 kB)
 Collecting urllib3<3,>=1.21.1 (from requests>=2.19.0->pooch>=1.1->librosa->-r requirements.txt (line 9))
-  Using cached urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+  Using cached urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
 Collecting certifi>=2017.4.17 (from requests>=2.19.0->pooch>=1.1->librosa->-r requirements.txt (line 9))
-  Using cached certifi-2025.11.12-py3-none-any.whl.metadata (2.5 kB)
-Collecting threadpoolctl>=3.1.0 (from scikit-learn>=1.1.0->librosa->-r requirements.txt (line 9))
+  Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Collecting threadpoolctl>=3.2.0 (from scikit-learn>=1.1.0->librosa->-r requirements.txt (line 9))
   Using cached threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
 Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.8.0->-r requirements.txt (line 2))
   Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
-Collecting humanfriendly>=9.1 (from coloredlogs->onnxruntime-openvino~=1.23.0->-r requirements.txt (line 10))
-  Using cached humanfriendly-10.0-py2.py3-none-any.whl.metadata (9.2 kB)
-Collecting pyreadline3 (from humanfriendly>=9.1->coloredlogs->onnxruntime-openvino~=1.23.0->-r requirements.txt (line 10))
-  Using cached pyreadline3-3.5.4-py3-none-any.whl.metadata (4.7 kB)
 Collecting MarkupSafe>=2.0 (from jinja2->torch==2.8.0->-r requirements.txt (line 2))
   Using cached markupsafe-3.0.3-cp313-cp313-win_amd64.whl.metadata (2.8 kB)
 Collecting standard-chunk (from standard-aifc->librosa->-r requirements.txt (line 9))
@@ -154,12 +136,14 @@ Collecting audioop-lts (from standard-aifc->librosa->-r requirements.txt (line 9
   Using cached audioop_lts-0.2.2-cp313-abi3-win_amd64.whl.metadata (2.0 kB)
 Using cached torch-2.8.0-cp313-cp313-win_amd64.whl (241.3 MB)
 Using cached torchaudio-2.8.0-cp313-cp313-win_amd64.whl (2.5 MB)
-Using cached onnxruntime_openvino-1.23.0-cp313-cp313-win_amd64.whl (13.1 MB)
-Using cached openvino-2025.3.0-19807-cp313-cp313-win_amd64.whl (40.6 MB)
-Using cached numpy-2.2.6-cp313-cp313-win_amd64.whl (12.6 MB)
-Using cached onnx-1.20.0-cp312-abi3-win_amd64.whl (16.5 MB)
-Using cached onnxscript-0.5.6-py3-none-any.whl (683 kB)
-Using cached onnx_ir-0.1.12-py3-none-any.whl (129 kB)
+Downloading onnxruntime_openvino-1.24.1-cp313-cp313-win_amd64.whl (13.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.7/13.7 MB 2.7 MB/s  0:00:05
+Using cached openvino-2025.4.1-20426-cp313-cp313-win_amd64.whl (41.8 MB)
+Using cached numpy-2.3.5-cp313-cp313-win_amd64.whl (12.8 MB)
+Using cached onnx-1.20.1-cp312-abi3-win_amd64.whl (16.4 MB)
+Downloading onnxscript-0.6.2-py3-none-any.whl (689 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 689.1/689.1 kB 13.2 MB/s  0:00:00
+Downloading onnx_ir-0.2.0-py3-none-any.whl (164 kB)
 Using cached sentencepiece-0.2.1-cp313-cp313-win_amd64.whl (1.1 MB)
 Using cached pyyaml-6.0.3-cp313-cp313-win_amd64.whl (154 kB)
 Using cached kaldi_native_fbank-1.22.3-cp313-cp313-win_amd64.whl (308 kB)
@@ -168,165 +152,204 @@ Using cached librosa-0.11.0-py3-none-any.whl (260 kB)
 Using cached audioread-3.1.0-py3-none-any.whl (23 kB)
 Using cached cffi-2.0.0-cp313-cp313-win_amd64.whl (183 kB)
 Using cached decorator-5.2.1-py3-none-any.whl (9.2 kB)
-Using cached joblib-1.5.2-py3-none-any.whl (308 kB)
+Using cached joblib-1.5.3-py3-none-any.whl (309 kB)
 Using cached lazy_loader-0.4-py3-none-any.whl (12 kB)
 Using cached ml_dtypes-0.5.4-cp313-cp313-win_amd64.whl (212 kB)
 Using cached msgpack-1.1.2-cp313-cp313-win_amd64.whl (72 kB)
-Using cached numba-0.62.1-cp313-cp313-win_amd64.whl (2.7 MB)
-Using cached llvmlite-0.45.1-cp313-cp313-win_amd64.whl (38.1 MB)
+Downloading numba-0.64.0-cp313-cp313-win_amd64.whl (2.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 MB 16.5 MB/s  0:00:00
+Using cached llvmlite-0.46.0-cp313-cp313-win_amd64.whl (38.1 MB)
 Using cached openvino_telemetry-2025.2.0-py3-none-any.whl (25 kB)
-Using cached pooch-1.8.2-py3-none-any.whl (64 kB)
-Using cached packaging-25.0-py3-none-any.whl (66 kB)
-Using cached platformdirs-4.5.0-py3-none-any.whl (18 kB)
-Using cached protobuf-6.33.1-cp310-abi3-win_amd64.whl (436 kB)
+Using cached pooch-1.9.0-py3-none-any.whl (67 kB)
+Using cached packaging-26.0-py3-none-any.whl (74 kB)
+Downloading platformdirs-4.9.2-py3-none-any.whl (21 kB)
+Downloading protobuf-7.34.0-cp310-abi3-win_amd64.whl (437 kB)
 Using cached requests-2.32.5-py3-none-any.whl (64 kB)
 Using cached charset_normalizer-3.4.4-cp313-cp313-win_amd64.whl (107 kB)
 Using cached idna-3.11-py3-none-any.whl (71 kB)
-Using cached urllib3-2.5.0-py3-none-any.whl (129 kB)
-Using cached certifi-2025.11.12-py3-none-any.whl (159 kB)
-Using cached scikit_learn-1.7.2-cp313-cp313-win_amd64.whl (8.7 MB)
-Using cached scipy-1.16.3-cp313-cp313-win_amd64.whl (38.5 MB)
+Using cached urllib3-2.6.3-py3-none-any.whl (131 kB)
+Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Using cached scikit_learn-1.8.0-cp313-cp313-win_amd64.whl (8.0 MB)
+Downloading scipy-1.17.1-cp313-cp313-win_amd64.whl (36.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.5/36.5 MB 16.5 MB/s  0:00:02
 Using cached soxr-1.0.0-cp312-abi3-win_amd64.whl (172 kB)
 Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
 Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
 Using cached threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
 Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
-Using cached coloredlogs-15.0.1-py2.py3-none-any.whl (46 kB)
-Using cached humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
-Using cached filelock-3.20.0-py3-none-any.whl (16 kB)
-Using cached flatbuffers-25.9.23-py2.py3-none-any.whl (30 kB)
-Using cached fsspec-2025.10.0-py3-none-any.whl (200 kB)
+Downloading filelock-3.25.0-py3-none-any.whl (26 kB)
+Using cached flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Using cached fsspec-2026.2.0-py3-none-any.whl (202 kB)
 Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
 Using cached markupsafe-3.0.3-cp313-cp313-win_amd64.whl (15 kB)
-Using cached networkx-3.6-py3-none-any.whl (2.1 MB)
-Using cached pycparser-2.23-py3-none-any.whl (118 kB)
-Using cached pyreadline3-3.5.4-py3-none-any.whl (83 kB)
-Using cached setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+Using cached networkx-3.6.1-py3-none-any.whl (2.1 MB)
+Using cached pycparser-3.0-py3-none-any.whl (48 kB)
+Downloading setuptools-82.0.0-py3-none-any.whl (1.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 13.7 MB/s  0:00:00
 Using cached standard_aifc-3.13.0-py3-none-any.whl (10 kB)
 Using cached audioop_lts-0.2.2-cp313-abi3-win_amd64.whl (30 kB)
 Using cached standard_chunk-3.13.0-py3-none-any.whl (4.9 kB)
 Using cached standard_sunau-3.13.0-py3-none-any.whl (7.4 kB)
-Installing collected packages: standard-chunk, openvino-telemetry, mpmath, flatbuffers, urllib3, typing-extensions, threadpoolctl, sympy, setuptools, sentencepiece, pyyaml, pyreadline3, pycparser, protobuf, platformdirs, packaging, numpy, networkx, msgpack, MarkupSafe, llvmlite, kaldi_native_fbank, joblib, idna, fsspec, filelock, decorator, charset_normalizer, certifi, audioop-lts, standard-sunau, standard-aifc, soxr, scipy, requests, openvino, numba, ml_dtypes, lazy_loader, jinja2, humanfriendly, cffi, torch, soundfile, scikit-learn, pooch, onnx, coloredlogs, audioread, torchaudio, onnxruntime-openvino, onnx_ir, librosa, onnxscript
-Successfully installed MarkupSafe-3.0.3 audioop-lts-0.2.2 audioread-3.1.0 certifi-2025.11.12 cffi-2.0.0 charset_normalizer-3.4.4 coloredlogs-15.0.1 decorator-5.2.1 filelock-3.20.0 flatbuffers-25.9.23 fsspec-2025.10.0 humanfriendly-10.0 idna-3.11 jinja2-3.1.6 joblib-1.5.2 kaldi_native_fbank-1.22.3 lazy_loader-0.4 librosa-0.11.0 llvmlite-0.45.1 ml_dtypes-0.5.4 mpmath-1.3.0 msgpack-1.1.2 networkx-3.6 numba-0.62.1 numpy-2.2.6 onnx-1.20.0 onnx_ir-0.1.12 onnxruntime-openvino-1.23.0 onnxscript-0.5.6 openvino-2025.3.0 openvino-telemetry-2025.2.0 packaging-25.0 platformdirs-4.5.0 pooch-1.8.2 protobuf-6.33.1 pycparser-2.23 pyreadline3-3.5.4 pyyaml-6.0.3 requests-2.32.5 scikit-learn-1.7.2 scipy-1.16.3 sentencepiece-0.2.1 setuptools-80.9.0 soundfile-0.13.1 soxr-1.0.0 standard-aifc-3.13.0 standard-chunk-3.13.0 standard-sunau-3.13.0 sympy-1.14.0 threadpoolctl-3.6.0 torch-2.8.0 torchaudio-2.8.0 typing-extensions-4.15.0 urllib3-2.5.0
+Installing collected packages: standard-chunk, openvino-telemetry, mpmath, flatbuffers, urllib3, typing-extensions, threadpoolctl, sympy, setuptools, sentencepiece, pyyaml, pycparser, protobuf, platformdirs, packaging, numpy, networkx, msgpack, MarkupSafe, llvmlite, kaldi_native_fbank, joblib, idna, fsspec, filelock, decorator, charset_normalizer, certifi, audioop-lts, standard-sunau, standard-aifc, soxr, scipy, requests, openvino, onnxruntime-openvino, numba, ml_dtypes, lazy_loader, jinja2, cffi, torch, soundfile, scikit-learn, pooch, onnx, audioread, torchaudio, onnx_ir, librosa, onnxscript
+Successfully installed MarkupSafe-3.0.3 audioop-lts-0.2.2 audioread-3.1.0 certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.4 decorator-5.2.1 filelock-3.25.0 flatbuffers-25.12.19 fsspec-2026.2.0 idna-3.11 jinja2-3.1.6 joblib-1.5.3 kaldi_native_fbank-1.22.3 lazy_loader-0.4 librosa-0.11.0 llvmlite-0.46.0 ml_dtypes-0.5.4 mpmath-1.3.0 msgpack-1.1.2 networkx-3.6.1 numba-0.64.0 numpy-2.3.5 onnx-1.20.1 onnx_ir-0.2.0 onnxruntime-openvino-1.24.1 onnxscript-0.6.2 openvino-2025.4.1 openvino-telemetry-2025.2.0 packaging-26.0 platformdirs-4.9.2 pooch-1.9.0 protobuf-7.34.0 pycparser-3.0 pyyaml-6.0.3 requests-2.32.5 scikit-learn-1.8.0 scipy-1.17.1 sentencepiece-0.2.1 setuptools-82.0.0 soundfile-0.13.1 soxr-1.0.0 standard-aifc-3.13.0 standard-chunk-3.13.0 standard-sunau-3.13.0 sympy-1.14.0 threadpoolctl-3.6.0 torch-2.8.0 torchaudio-2.8.0 typing-extensions-4.15.0 urllib3-2.6.3
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>python export-onnx.py --input-len-in-seconds 5
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>pip list
+Package              Version   Build
+-------------------- --------- -----
+audioop-lts          0.2.2
+audioread            3.1.0
+certifi              2026.2.25
+cffi                 2.0.0
+charset-normalizer   3.4.4
+decorator            5.2.1
+filelock             3.25.0
+flatbuffers          25.12.19
+fsspec               2026.2.0
+idna                 3.11
+Jinja2               3.1.6
+joblib               1.5.3
+kaldi-native-fbank   1.22.3
+lazy_loader          0.4
+librosa              0.11.0
+llvmlite             0.46.0
+MarkupSafe           3.0.3
+ml_dtypes            0.5.4
+mpmath               1.3.0
+msgpack              1.1.2
+networkx             3.6.1
+numba                0.64.0
+numpy                2.3.5
+onnx                 1.20.1
+onnx-ir              0.2.0
+onnxruntime-openvino 1.24.1
+onnxscript           0.6.2
+openvino             2025.4.1  20426
+openvino-telemetry   2025.2.0
+packaging            26.0
+pip                  26.0.1
+platformdirs         4.9.2
+pooch                1.9.0
+protobuf             7.34.0
+pycparser            3.0
+PyYAML               6.0.3
+requests             2.32.5
+scikit-learn         1.8.0
+scipy                1.17.1
+sentencepiece        0.2.1
+setuptools           82.0.0
+soundfile            0.13.1
+soxr                 1.0.0
+standard-aifc        3.13.0
+standard-chunk       3.13.0
+standard-sunau       3.13.0
+sympy                1.14.0
+threadpoolctl        3.6.0
+torch                2.8.0
+torchaudio           2.8.0
+typing_extensions    4.15.0
+urllib3              2.6.3
+
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>python export-onnx.py --input-len-in-seconds 5
 {'input_len_in_seconds': 5, 'opset_version': 13}
 saved to tokens.txt
 loading model
 num_frames 500
 num_input_frames 83
-C:\Github\sense-voice-ovep-python-static\export-onnx.py:129: DeprecationWarning: You are using the legacy TorchScript-based ONNX export. Starting in PyTorch 2.9, the new torch.export-based ONNX exporter will be the default. To switch now, set dynamo=True in torch.onnx.export. This new exporter supports features like exporting LLMs with DynamicCache. We encourage you to try it and share feedback to help improve the experience. Learn more about the new export logic: https://pytorch.org/docs/stable/onnx_dynamo.html. For exporting control flow: https://pytorch.org/tutorials/beginner/onnx/export_control_flow_model_to_onnx_tutorial.html.
+C:\GitHub\sense-voice-ovep-python-static\export-onnx.py:129: DeprecationWarning: You are using the legacy TorchScript-based ONNX export. Starting in PyTorch 2.9, the new torch.export-based ONNX exporter will be the default. To switch now, set dynamo=True in torch.onnx.export. This new exporter supports features like exporting LLMs with DynamicCache. We encourage you to try it and share feedback to help improve the experience. Learn more about the new export logic: https://pytorch.org/docs/stable/onnx_dynamo.html. For exporting control flow: https://pytorch.org/tutorials/beginner/onnx/export_control_flow_model_to_onnx_tutorial.html.
   torch.onnx.export(
-C:\Python\openvino_venv\Lib\site-packages\torch\onnx\_internal\jit_utils.py:309: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\jit\passes\onnx\constant_fold.cpp:180.)
+C:\Python\python313_venv\Lib\site-packages\torch\onnx\_internal\jit_utils.py:309: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\jit\passes\onnx\constant_fold.cpp:180.)
   _C._jit_pass_onnx_node_shape_type_inference(node, params_dict, opset_version)
-C:\Python\openvino_venv\Lib\site-packages\torch\onnx\utils.py:684: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\jit\passes\onnx\constant_fold.cpp:180.)
+C:\Python\python313_venv\Lib\site-packages\torch\onnx\utils.py:684: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\jit\passes\onnx\constant_fold.cpp:180.)
   _C._jit_pass_onnx_graph_shape_type_inference(
-C:\Python\openvino_venv\Lib\site-packages\torch\onnx\utils.py:1154: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\jit\passes\onnx\constant_fold.cpp:180.)
+C:\Python\python313_venv\Lib\site-packages\torch\onnx\utils.py:1154: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\jit\passes\onnx\constant_fold.cpp:180.)
   _C._jit_pass_onnx_graph_shape_type_inference(
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>dir
- Volume in drive C is InstallTo
- Volume Serial Number is 76DF-BB22
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 6E19-CE53
 
- Directory of C:\Github\sense-voice-ovep-python-static
+ Directory of C:\GitHub\sense-voice-ovep-python-static
 
-12/03/2025  03:23 PM    <DIR>          .
-11/25/2025  04:24 PM    <DIR>          ..
-11/24/2025  03:02 PM            11,203 am.mvn
-11/24/2025  03:02 PM           377,341 chn_jpn_yue_eng_ko_spectok.bpe.model
-11/24/2025  03:02 PM             1,855 config.yaml
-11/24/2025  03:02 PM               396 configuration.json
-11/23/2025  08:02 PM    <DIR>          example
-11/23/2025  08:02 PM             4,802 export-onnx.py
-12/03/2025  03:23 PM       928,985,316 model-5-seconds.onnx
-11/24/2025  03:03 PM       936,291,369 model.pt
-11/23/2025  08:02 PM             6,887 README.md
-12/03/2025  03:12 PM               164 requirements.txt
-11/23/2025  08:02 PM             7,171 test_onnx.py
-12/03/2025  03:23 PM           340,949 tokens.txt
-11/23/2025  08:02 PM            19,498 torch_model.py
-12/03/2025  03:23 PM    <DIR>          __pycache__
-              12 File(s)  1,866,046,951 bytes
-               4 Dir(s)  282,305,798,144 bytes free
+03/05/2026  03:21 PM    <DIR>          .
+03/05/2026  03:03 PM    <DIR>          ..
+11/21/2025  02:07 PM            11,203 am.mvn
+11/21/2025  02:07 PM           377,341 chn_jpn_yue_eng_ko_spectok.bpe.model
+11/21/2025  02:07 PM             1,855 config.yaml
+11/21/2025  02:07 PM               396 configuration.json
+12/24/2025  07:13 PM    <DIR>          example
+11/23/2025  04:02 PM             4,802 export-onnx.py
+12/03/2025  03:29 PM            23,734 log_full.txt
+03/05/2026  03:21 PM       928,985,316 model-5-seconds.onnx
+11/23/2025  03:10 PM       936,291,369 model.pt
+01/06/2026  02:44 PM             7,499 README.md
+03/05/2026  03:17 PM               164 requirements.txt
+11/23/2025  07:27 PM             7,171 test_onnx.py
+03/05/2026  03:20 PM           340,949 tokens.txt
+11/21/2025  02:19 PM            19,498 torch_model.py
+03/05/2026  03:20 PM    <DIR>          __pycache__
+              13 File(s)  1,866,071,297 bytes
+               4 Dir(s)  588,280,012,800 bytes free
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>python test_onnx.py --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3
-{'device': None, 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\zh.mp3', 'language': 'auto', 'use_itn': 0}
-Device: Using Default CPU Executor.
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>python test_onnx.py --device CPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3
+{'device': 'CPU', 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\zh.mp3', 'language': 'auto', 'use_itn': 0}
+Device: OpenVINO EP with device = CPU
 features.shape (93, 560)
 features.shape (83, 560)
 <|zh|><|NEUTRAL|><|Speech|><|woitn|>开放时间早上九点至下午五点
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>python test_onnx.py --device CPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3 --use-itn 1
-{'device': 'CPU', 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\zh.mp3', 'language': 'auto', 'use_itn': 1}
-Device: OpenVINO EP with device = CPU
-features.shape (93, 560)
-features.shape (83, 560)
-<|zh|><|NEUTRAL|><|Speech|><|withitn|>开放时间早上9点至下午5点。
-
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>python test_onnx.py --device GPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>python test_onnx.py --device GPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3
 {'device': 'GPU', 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\zh.mp3', 'language': 'auto', 'use_itn': 0}
 Device: OpenVINO EP with device = GPU
 features.shape (93, 560)
 features.shape (83, 560)
 <|zh|><|NEUTRAL|><|Speech|><|woitn|>开放时间早上九点至下午五点
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\zh.mp3
 {'device': 'NPU', 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\zh.mp3', 'language': 'auto', 'use_itn': 0}
 Device: OpenVINO EP with device = NPU
 features.shape (93, 560)
 features.shape (83, 560)
 <|zh|><|NEUTRAL|><|Speech|><|woitn|>开放时间早上九点至下午五点
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\ja.mp3
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\ja.mp3
 {'device': 'NPU', 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\ja.mp3', 'language': 'auto', 'use_itn': 0}
 Device: OpenVINO EP with device = NPU
 features.shape (120, 560)
 features.shape (83, 560)
 <|ja|><|NEUTRAL|><|Speech|><|woitn|>うちの中学は弁当制で持っていけない場合は50円の学校半
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\ko.mp3
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\ko.mp3
 {'device': 'NPU', 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\ko.mp3', 'language': 'auto', 'use_itn': 0}
 Device: OpenVINO EP with device = NPU
 features.shape (77, 560)
 features.shape (83, 560)
 <|ko|><|NEUTRAL|><|Speech|><|woitn|>조 금만 생각 을 하 면서 살 면 훨씬 편할 거야
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\en.mp3
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\en.mp3
 {'device': 'NPU', 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\en.mp3', 'language': 'auto', 'use_itn': 0}
 Device: OpenVINO EP with device = NPU
 features.shape (119, 560)
 features.shape (83, 560)
 <|en|><|NEUTRAL|><|Speech|><|woitn|>the tribal chieftain called for the boy and presented him with
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\yue.mp3
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>python test_onnx.py --device NPU --model model-5-seconds.onnx --token tokens.txt --wav example\yue.mp3
 {'device': 'NPU', 'model': 'model-5-seconds.onnx', 'tokens': 'tokens.txt', 'wave': 'example\\yue.mp3', 'language': 'auto', 'use_itn': 0}
 Device: OpenVINO EP with device = NPU
 features.shape (86, 560)
 features.shape (83, 560)
 <|yue|><|NEUTRAL|><|Speech|><|woitn|>呢几个字都表达唔到我想讲嘅意思
 
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
-(openvino_venv) C:\Github\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
+(python313_venv) C:\GitHub\sense-voice-ovep-python-static>
